@@ -202,7 +202,7 @@
 
     function initializeVoices() {
         const voices = speechSynthesis.getVoices();
-        germanTTSVoice = voices.find(v => v.name === "Microsoft Amala Online (Natural) - German (Germany)") || voices.find(v => v.name.includes("Amala") && v.lang === "de-DE");
+        germanTTSVoice = voices.find(v => v.name === "Microsoft Blessica Online (Natural) - Filipino (Philippines)") || voices.find(v => v.name.includes("Blessica") && v.lang === "fil-PH");
         if (germanTTSVoice) {
             console.log("Successfully found German voice:", germanTTSVoice.name);
         } else {
@@ -219,7 +219,7 @@
         recognition = new webkitSpeechRecognition();
         recognition.continuous = true;
         recognition.interimResults = false;
-        recognition.lang = 'de-DE';
+        recognition.lang = 'fil-PH';
         recognition.onresult = function (event) {
             let transcript = '';
             for (let i = event.resultIndex; i < event.results.length; ++i) {
@@ -303,7 +303,7 @@
             return;
         }
         currentUtterance = new SpeechSynthesisUtterance(cleanedText);
-        currentUtterance.lang = 'de-DE';
+        currentUtterance.lang = 'fil-PH';
         if (germanTTSVoice) currentUtterance.voice = germanTTSVoice;
         currentUtterance.rate = currentPlaybackRate;
         currentUtterance.onboundary = function(event) {
@@ -793,3 +793,4 @@
 </script>
 </body>
 </html>
+
